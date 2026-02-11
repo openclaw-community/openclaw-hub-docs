@@ -1,0 +1,24 @@
+---
+name: Feature Request
+about: Suggest a new feature for OpenClaw Hub
+title: '[FEATURE] '
+labels: enhancement
+assignees: ''
+---
+
+## Feature Description
+Clear description of what you want to add.
+
+## Use Case
+Why is this valuable? What problem does it solve?
+
+## Proposed Implementation
+High-level approach (if you have ideas).
+
+## Related Docs
+Link to relevant ARCHITECTURE.md sections or other docs.
+
+## Success Criteria
+How do we know this is done?
+- [ ] Criterion 1
+- [ ] Criterion 2
