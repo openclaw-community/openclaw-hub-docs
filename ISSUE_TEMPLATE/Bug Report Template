@@ -1,0 +1,178 @@
+---
+name: Bug Report
+about: Report a bug in OpenClaw Hub
+title: '[BUG] '
+labels: bug
+assignees: ''
+---
+
+## Bug Description
+What's broken?
+
+## Steps to Reproduce
+1. Step one
+2. Step two
+3. See error
+
+## Expected Behavior
+What should happen?
+
+## Actual Behavior
+What actually happens?
+
+## Environment
+- OpenClaw Hub version:
+- Python version:
+- OS:
+
+## Logs/Error Messages
+```
+
+### GitHub Projects - Your Visual Board
+
+**Create Project Board** (in openclaw-community org):
+
+**Columns:**
+1. **📋 Backlog** - Future ideas, not prioritized
+2. **📝 Planned** - Prioritized, documented, ready to work
+3. **🏗️ In Progress** - Currently being developed
+4. **👀 Review** - PR open, needs review
+5. **✅ Done** - Merged to main
+
+**Cards automatically created from issues**
+
+### Milestones - Your Release Targets
+
+**Milestone 1: MVP** (Target: 2 weeks)
+- Core MCP server framework
+- Credential management
+- Media domain (Sora + Kie)
+- Git domain (GitHub basics)
+- Basic documentation
+- Working configuration
+
+**Milestone 2: Community Ready** (Target: 4 weeks after MVP)
+- Comprehensive docs
+- Examples repository
+- Contribution guidelines
+- Analytics/logging
+- Performance testing
+
+**Milestone 3: Feature Complete** (Target: 8 weeks after MVP)
+- Additional domains
+- Advanced routing
+- Web UI (optional)
+- Enterprise features
+
+---
+
+## 4. Software Development Artifacts
+
+### What Should Exist
+
+#### A. In Main Code Repository (`openclaw-hub`)
+```
+openclaw-hub/
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.md
+│   │   └── feature_request.md
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── workflows/              # GitHub Actions (CI/CD)
+│       ├── tests.yml           # Run tests on PR
+│       └── lint.yml            # Code quality checks
+│
+├── docs/                       # Quick reference (detailed docs in separate repo)
+│   ├── quickstart.md
+│   └── configuration.md
+│
+├── src/
+│   ├── openclaw_hub/
+│   │   ├── __init__.py
+│   │   ├── server.py           # Main MCP server
+│   │   ├── core/
+│   │   │   ├── __init__.py
+│   │   │   ├── auth.py         # Credential management
+│   │   │   ├── config.py       # Configuration loading
+│   │   │   ├── router.py       # Request routing
+│   │   │   └── logger.py       # Audit logging
+│   │   └── domains/
+│   │       ├── __init__.py
+│   │       ├── media/
+│   │       │   ├── __init__.py
+│   │       │   ├── tools.py    # MCP tool definitions
+│   │       │   ├── orchestrator.py
+│   │       │   └── providers/
+│   │       │       ├── base.py
+│   │       │       ├── sora.py
+│   │       │       └── kie.py
+│   │       └── git/
+│   │           ├── __init__.py
+│   │           ├── tools.py
+│   │           └── providers/
+│   │               └── github.py
+│   └── scripts/
+│       └── setup_dev.py        # Development environment setup
+│
+├── tests/
+│   ├── __init__.py
+│   ├── conftest.py             # Pytest configuration
+│   ├── test_core/
+│   │   ├── test_auth.py
+│   │   └── test_router.py
+│   └── test_domains/
+│       ├── test_media/
+│       │   └── test_providers.py
+│       └── test_git/
+│
+├── config/
+│   ├── config.example.yaml     # Example configuration
+│   └── schema.yaml             # Config validation schema
+│
+├── .env.example                # Example environment variables
+├── .gitignore
+├── LICENSE                     # Apache 2.0
+├── README.md                   # Project overview
+├── CONTRIBUTING.md             # How to contribute
+├── CHANGELOG.md                # Version history
+├── pyproject.toml              # Python project config
+├── requirements.txt            # Python dependencies
+└── requirements-dev.txt        # Development dependencies
+```
+
+#### B. In Documentation Repository (`openclaw-hub-docs`)
+```
+openclaw-hub-docs/
+├── PROJECT_PLAN.md             # Master plan
+├── ARCHITECTURE.md             # Technical design
+├── CURRENT_TASK.md             # Active work tracking
+├── DEVELOPMENT_WORKFLOW.md     # How to work on project
+│
+├── decisions/                  # Architecture Decision Records (ADRs)
+│   ├── 001-python-over-typescript.md
+│   ├── 002-single-server-architecture.md
+│   ├── 003-yaml-configuration.md
+│   └── template.md             # ADR template
+│
+├── domains/                    # Per-domain documentation
+│   ├── media.md
+│   ├── git.md
+│   └── template.md
+│
+├── guides/                     # How-to guides
+│   ├── getting-started.md
+│   ├── adding-a-provider.md
+│   ├── adding-a-domain.md
+│   ├── configuration.md
+│   ├── security-best-practices.md
+│   └── testing.md
+│
+├── api/                        # API reference
+│   ├── tools.md                # All available MCP tools
+│   ├── resources.md            # MCP resources
+│   └── configuration.md        # Config options
+│
+└── examples/                   # Example use cases
+    ├── sage-bot.md             # How Sage uses it
+    ├── basic-video-gen.md
+    └── advanced-orchestration.md
